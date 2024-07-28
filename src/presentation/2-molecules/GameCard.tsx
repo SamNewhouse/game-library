@@ -3,6 +3,8 @@ import Button from "../1-atoms/Button";
 import Component from "../1-atoms/Icons/Component";
 import Heart from "../1-atoms/Icons/Heart";
 import Star from "../1-atoms/Icons/Star";
+import Steam from "../1-atoms/Icons/Steam";
+import Ubisoft from "../1-atoms/Icons/Ubisoft";
 import Separator from "../1-atoms/Separator";
 import Url from "../1-atoms/Url";
 
@@ -20,6 +22,11 @@ interface Props {
   className?: string;
   game: Game;
 }
+
+const platformIcons = {
+  steam: Steam,
+  ubisoft: Ubisoft
+};
 
 const GameCard: FC<Props> = ({ className, game }) => (
   <div className={`relative overflow-hidden rounded-lg bg-background shadow-sm transition-all hover:scale-105 hover:shadow-md${className ? " " + className : ""}`}>
@@ -42,11 +49,14 @@ const GameCard: FC<Props> = ({ className, game }) => (
           ))}
         </div>
         <div className="flex gap-2 mt-2">
-          {game.platforms.map((platform, index) => (
-            <div key={index} className="bg-muted rounded-full w-6 h-6 flex items-center justify-center">
-              <Component className="w-4 h-4 text-muted-foreground" />
-            </div>
-          ))}
+          {game.platforms.map((platform, index) => {
+            const PlatformIcon = platformIcons[platform.toLowerCase() as keyof typeof platformIcons] || Component;
+            return (
+              <div key={index} className="bg-muted rounded-full w-6 h-6 flex items-center justify-center">
+                <PlatformIcon className="w-6 h-6 fill-white text-muted-foreground" />
+              </div>
+            );
+          })}
         </div>
       </div>
     </Url>

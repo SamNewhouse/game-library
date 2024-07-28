@@ -22,7 +22,7 @@ const HomePage: NextPage<Props> = () => {
       rating: 4.8,
       genre: ["Action", "RPG"],
       isFavorite: true,
-      platforms: ["Steam", "GOG"],
+      platforms: ["steam"],
     },
     {
       id: 2,
@@ -31,7 +31,7 @@ const HomePage: NextPage<Props> = () => {
       rating: 4.9,
       genre: ["Action", "Adventure"],
       isFavorite: false,
-      platforms: ["Steam", "Epic"],
+      platforms: ["steam", "ubisoft"],
     },
     {
       id: 3,
@@ -40,7 +40,7 @@ const HomePage: NextPage<Props> = () => {
       rating: 4.7,
       genre: ["Action", "Adventure"],
       isFavorite: true,
-      platforms: ["Steam", "PlayStation"],
+      platforms: ["steam"],
     },
     {
       id: 4,
@@ -49,16 +49,16 @@ const HomePage: NextPage<Props> = () => {
       rating: 4.8,
       genre: ["Action", "Adventure"],
       isFavorite: false,
-      platforms: ["PlayStation"],
+      platforms: ["Ubisoft"],
     },
     {
       id: 5,
-      title: "Uncharted 4: A Thief's End",
-      cover: "https://images.unsplash.com/photo-1559126698-1906840f3c95?q=100&w=400",
-      rating: 4.7,
-      genre: ["Action", "Adventure"],
+      title: "Fortnite",
+      cover: "https://images.unsplash.com/photo-1589241062272-c0a000072dfa?q=100&w=400",
+      rating: 3.4,
+      genre: ["Action", "FPS"],
       isFavorite: true,
-      platforms: ["PlayStation"],
+      platforms: ["ubisoft"],
     },
     {
       id: 6,
@@ -67,7 +67,7 @@ const HomePage: NextPage<Props> = () => {
       rating: 4.8,
       genre: ["Action", "Adventure"],
       isFavorite: false,
-      platforms: ["PlayStation", "Steam"],
+      platforms: ["steam"],
     },
     {
       id: 7,
@@ -76,7 +76,7 @@ const HomePage: NextPage<Props> = () => {
       rating: 4.6,
       genre: ["Action", "FPS"],
       isFavorite: true,
-      platforms: ["Xbox", "Steam"],
+      platforms: ["steam"],
     },
     {
       id: 8,
@@ -85,7 +85,7 @@ const HomePage: NextPage<Props> = () => {
       rating: 4.9,
       genre: ["Racing"],
       isFavorite: false,
-      platforms: ["Xbox", "Steam"],
+      platforms: ["steam"],
     },
     {
       id: 9,
@@ -94,7 +94,7 @@ const HomePage: NextPage<Props> = () => {
       rating: 4.2,
       genre: ["Action", "RPG"],
       isFavorite: true,
-      platforms: ["Steam", "GOG", "PlayStation", "Xbox"],
+      platforms: ["steam"],
     },
     {
       id: 10,
@@ -103,7 +103,7 @@ const HomePage: NextPage<Props> = () => {
       rating: 4.6,
       genre: ["Action", "Adventure"],
       isFavorite: false,
-      platforms: ["Ubisoft", "PlayStation", "Xbox"],
+      platforms: ["Ubisoft"],
     },
     {
       id: 11,
@@ -112,7 +112,7 @@ const HomePage: NextPage<Props> = () => {
       rating: 4.8,
       genre: ["Action", "Adventure"],
       isFavorite: true,
-      platforms: ["Steam", "PlayStation", "Xbox"],
+      platforms: ["steam"],
     },
     {
       id: 12,
@@ -121,7 +121,7 @@ const HomePage: NextPage<Props> = () => {
       rating: 4.5,
       genre: ["Action", "Adventure"],
       isFavorite: false,
-      platforms: ["Steam", "PlayStation"],
+      platforms: ["steam"],
     },
     {
       id: 13,
@@ -130,7 +130,7 @@ const HomePage: NextPage<Props> = () => {
       rating: 4.7,
       genre: ["Action", "Adventure"],
       isFavorite: true,
-      platforms: ["Steam", "PlayStation", "Xbox"],
+      platforms: ["steam"],
     },
     {
       id: 14,
@@ -139,7 +139,7 @@ const HomePage: NextPage<Props> = () => {
       rating: 4.6,
       genre: ["FPS", "Action"],
       isFavorite: false,
-      platforms: ["Steam", "PlayStation", "Xbox"],
+      platforms: ["steam"],
     },
     {
       id: 15,
@@ -148,7 +148,7 @@ const HomePage: NextPage<Props> = () => {
       rating: 4.7,
       genre: ["Action", "Adventure"],
       isFavorite: true,
-      platforms: ["Steam", "Epic", "PlayStation", "Xbox"],
+      platforms: ["steam", "ubisoft"],
     },
     {
       id: 16,
@@ -157,11 +157,11 @@ const HomePage: NextPage<Props> = () => {
       rating: 4.8,
       genre: ["Action", "Horror"],
       isFavorite: false,
-      platforms: ["Steam", "PlayStation", "Xbox"],
+      platforms: ["steam"],
     },
   ])
   const [currentPage, setCurrentPage] = useState(1)
-  const [gamesPerPage, setGamesPerPage] = useState(16)
+  const [gamesPerPage, setGamesPerPage] = useState(18)
   const filteredGames = useMemo(() => {
     let filtered = games
     if (searchQuery) {
