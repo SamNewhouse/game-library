@@ -1,6 +1,5 @@
 import { NextPage } from "next";
 import BaseLayout from "../4-layouts/BaseLayout";
-import React from "react";
 
 interface Props {
   statusCode: number | null;
@@ -9,7 +8,9 @@ interface Props {
 const ErrorPage: NextPage<Props> = ({ statusCode }) => {
   return (
     <>
-      <BaseLayout className="error">
+      <BaseLayout className="error" activeFilter={""} setActiveFilter={function (filter: string): void {
+        throw new Error("Function not implemented.");
+      } }>
         <div className="flex justify-center items-center h-screen">
           <div className="flex flex-col w-100 max-w-md space-y-3">
             <h1 className="font-serif text-8xl">
